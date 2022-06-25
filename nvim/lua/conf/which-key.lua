@@ -19,6 +19,7 @@ local mappings = {
     ["u"] = {"<cmd>UndotreeToggle<cr>", "undotree"},
     ["s"] = {"<cmd>Telescope grep_string search_dirs=% path_display='hidden' theme=ivy<cr>", "search current word"},
     ["f"] = {"<cmd>Telescope current_buffer_fuzzy_find theme=ivy<cr>", "fzf search"},
+    ["F"] = {"<cmd>lua vim.lsp.buf.format { async = true }<cr>", "buffer format"},
     ["o"] = {"<cmd>SymbolsOutline<cr>", "list all symbols"},
   },
 
@@ -26,7 +27,6 @@ local mappings = {
     name = "files",
     ["e"] = {"<cmd>lua require('utils').nvim_tree_toggle()<cr>", "file explore"},
     ["f"] = {"<cmd>lua require('utils').find_files()<cr>", "file find"},
-    ["F"] = {"<cmd>lua vim.lsp.buf.formatting()<cr>", "file format"},
     ["h"] = {"<cmd>DiffviewFileHistory<cr>", "file history"},
   },
   h = {
