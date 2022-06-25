@@ -110,6 +110,8 @@ return packer.startup(function(use)
   use "lfv89/vim-interestingwords"
   use "r1024/telescope-cscope.nvim"
 
+  use "fgheng/winbar.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
