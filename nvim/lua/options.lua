@@ -22,8 +22,8 @@ local options = {
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
-  shiftwidth = 2,                          -- the number of spaces inserted for each indentation
-  tabstop = 2,                             -- insert 2 spaces for a tab
+  shiftwidth = 4,                          -- the number of spaces inserted for each indentation
+  tabstop = 4,                             -- insert 2 spaces for a tab
   cursorline = true,                       -- highlight the current line
   cursorcolumn = false,                    -- cursor column.
   number = true,                           -- set numbered lines
@@ -59,6 +59,10 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[autocmd FocusGained,BufEnter * checktime]]
 
 vim.cmd [[autocmd FileType make set noexpandtab]]
+vim.cmd [[
+  autocmd FileType lua set shiftwidth=2
+  autocmd FileType lua set tabstop=2
+]]
 -- q exit
 vim.cmd [[autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>]]
 
