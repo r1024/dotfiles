@@ -34,10 +34,7 @@ local options = {
   scrolloff = 8,                           -- keep 8 height offset from above and bottom
   sidescrolloff = 8,                       -- keep 8 width offset from left and right
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  foldmethod = "expr",                     -- fold with nvim_treesitter
-  foldexpr = "nvim_treesitter#foldexpr()",
-  foldenable = false,                      -- no fold to be applied when open a file
-  foldlevel = 99,                          -- if not set this, fold will be everywhere
+  foldmethod = "manual",
   spell = false,                            -- add spell support
   spelllang = { 'en_us' },                 -- support which languages?
   diffopt="vertical,filler,internal,context:4",                      -- vertical diff split view
@@ -66,8 +63,8 @@ vim.cmd [[
 -- q exit
 vim.cmd [[autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>]]
 
--- vim.cmd [[autocmd BufWritePost * if expand("%") != "" | mkview | endif]]
--- vim.cmd [[autocmd BufReadPost * if expand("%") != "" | silent! loadview | endif]]
+vim.cmd [[autocmd BufWritePost *.c,*.h,*.md mkview]]
+vim.cmd [[autocmd BufReadPost *.c,*.h,*.md silent! loadview]]
 
 -- WSL yank support
 vim.cmd [[
