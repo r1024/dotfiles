@@ -17,7 +17,7 @@ local mappings = {
     ["d"] = {"<cmd>bd<cr>", "buffer delete"},
     ["D"] = {"<cmd>%bd|e#<CR>", "Close Other Buffers" },
     ["u"] = {"<cmd>UndotreeToggle<cr>", "undotree"},
-    ["s"] = {"<cmd>Telescope grep_string search_dirs=% path_display='hidden' theme=ivy<cr>", "search current word"},
+    ["s"] = {"<cmd>Telescope grep_string search_dirs=% word_match=-w path_display='hidden' theme=ivy<cr>", "search current word"},
     ["f"] = {"<cmd>Telescope current_buffer_fuzzy_find theme=ivy<cr>", "fzf search"},
     ["F"] = {"<cmd>lua vim.lsp.buf.format { async = true }<cr>", "buffer format"},
     ["o"] = {"<cmd>SymbolsOutline<cr>", "list all symbols"},

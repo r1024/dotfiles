@@ -29,7 +29,7 @@ M.find_files = function()
     smart_search_path = vim.fn.fnamemodify(smart_search_path, ":h")
   end
   if smart_search_path then
-    vim.fn.execute("Telescope find_files cwd=" .. smart_search_path .. " theme=ivy", "")
+    vim.fn.execute("Telescope find_files cwd=" .. smart_search_path .. " search_dirs=" .. smart_search_path .. " theme=ivy", "")
   else
     vim.fn.execute("Telescope find_files theme=ivy", "")
   end
@@ -42,7 +42,7 @@ M.grep_string = function()
     smart_search_path = vim.fn.fnamemodify(smart_search_path, ":h")
   end
   if smart_search_path then
-    vim.fn.execute("Telescope grep_string cwd=" .. smart_search_path .. " theme=ivy", "")
+    vim.fn.execute("Telescope grep_string cwd=" .. smart_search_path .. " search_dirs=" .. smart_search_path .. " word_match=-w" .. " theme=ivy", "")
   else
     vim.fn.execute("Telescope grep_string theme=ivy", "")
   end
@@ -54,7 +54,7 @@ M.live_grep = function()
     smart_search_path = vim.fn.fnamemodify(smart_search_path, ":h")
   end
   if smart_search_path then
-    vim.fn.execute("Telescope live_grep cwd=" .. smart_search_path .. " theme=ivy", "")
+    vim.fn.execute("Telescope live_grep cwd=" .. smart_search_path .. " search_dirs=" .. smart_search_path .. " theme=ivy", "")
   else
     vim.fn.execute("Telescope live_grep theme=ivy", "")
   end
