@@ -3,4 +3,4 @@ require "keymaps"
 require "plugins"
 require "conf"
 
--- require "utils"
+require "utils"
