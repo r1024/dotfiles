@@ -8,7 +8,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "clone",
     "--depth",
     "1",
-    "https://github.com/wbthomason/packer.nvim",
+    "http://hub.fastgit.xyz/wbthomason/packer.nvim",
     install_path,
   }
   print "Installing packer close and reopen Neovim..."
@@ -33,8 +33,7 @@ end
 packer.init {
   git = {
     -- default_url_format = 'http://hub.nuaa.cf/%s'
-    -- default_url_format = 'http://hub.fastgit.xyz/%s'
-    -- default_url_format = 'http://github.com/%s'
+    default_url_format = 'http://hub.fastgit.xyz/%s'
   },
 }
 
