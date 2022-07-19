@@ -29,7 +29,7 @@ M.find_files = function()
     smart_search_path = vim.fn.fnamemodify(smart_search_path, ":h")
   end
   if smart_search_path then
-    vim.fn.execute("Telescope find_files cwd=" .. smart_search_path .. " theme=ivy no_ignore=1", "")
+    vim.fn.execute("Telescope find_files cwd=" .. smart_search_path .. " theme=ivy", "")
   else
     vim.fn.execute("Telescope find_files theme=ivy", "")
   end
