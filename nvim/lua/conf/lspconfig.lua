@@ -64,15 +64,9 @@ require('lspconfig')['sumneko_lua'].setup {
     },
   }
 }
--- require('lspconfig')['tsserver'].setup{
---     on_attach = on_attach,
---     flags = lsp_flags,
--- }
--- require('lspconfig')['rust_analyzer'].setup{
---     on_attach = on_attach,
---     flags = lsp_flags,
---     -- Server-specific settings...
---     settings = {
---       ["rust-analyzer"] = {}
---     }
--- }
+
+require'lspconfig'.clangd.setup {
+  cmd = { "clangd"},
+  handlers = {['textDocument/publishDiagnostics'] = function(...) end  }
+}
+
